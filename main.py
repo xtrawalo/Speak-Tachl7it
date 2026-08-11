@@ -31,10 +31,9 @@ nums =        {0:"amya",
 
 while True:
     typed_nums=[]
-    word = input("Enter a number between 0 and 1M :  ").replace(" ","")
-    if len(word) >= 1 and len(word) <= 7 :
-        length = len(word)
-        word = int(word)
+    word = int(input("Enter a number between 0 and 1M :  ").replace(" ",""))
+    if 0 <= word <= 1000000 :
+        length = len(str(word))
         num = 0
         for i in range(length):
             unit = pow(10,i+1)
@@ -104,11 +103,11 @@ while True:
 
 
 
-        elif len(typed_nums) == 4: #ten thousands
+        elif len(typed_nums) == 4: #thousand
             times = typed_nums[3] // 1000
             if times != 0 :
                 if times == 1:
-                    print(f" {nums.get('1000')}", end=" ")
+                    print(f" {nums.get(1000)}", end=" ")
                 else:
                     print(f"{nums.get(times)} n {nums.get('+1000')}", end=" ")
             if times != 0:
@@ -174,7 +173,7 @@ while True:
                             print(f"{nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
                 else:
                         if typed_nums[0] == 0 and typed_nums[1] == 0:
-                            print()
+                            print(f"{nums.get(0)}")
                         elif typed_nums[0] == 0 and typed_nums[1] != 0:
                             print(f"{nums.get(typed_nums[1])}")
                         elif typed_nums[0] != 0 and typed_nums[1] == 0:
@@ -258,7 +257,7 @@ while True:
                             print(f"{nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
                 else:
                         if typed_nums[0] == 0 and typed_nums[1] == 0:
-                            print()
+                            print(f"{nums.get(0)}")
                         elif typed_nums[0] == 0 and typed_nums[1] != 0:
                             print(f"{nums.get(typed_nums[1])}")
                         elif typed_nums[0] != 0 and typed_nums[1] == 0:
@@ -371,7 +370,7 @@ while True:
                             print(f"{nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
                 else:
                         if typed_nums[0] == 0 and typed_nums[1] == 0:
-                            print()
+                            print(f"{nums.get(0)}")
                         elif typed_nums[0] == 0 and typed_nums[1] != 0:
                             print(f"{nums.get(typed_nums[1])}")
                         elif typed_nums[0] != 0 and typed_nums[1] == 0:
@@ -493,7 +492,7 @@ while True:
                                     f"{nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
                     else:
                         if typed_nums[0] == 0 and typed_nums[1] == 0:
-                            print()
+                            print(f"{nums.get(0)}")
                         elif typed_nums[0] == 0 and typed_nums[1] != 0:
                             print(f"{nums.get(typed_nums[1])}")
                         elif typed_nums[0] != 0 and typed_nums[1] == 0:
