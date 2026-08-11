@@ -383,7 +383,7 @@ def translate():
                             result = (
                                 f"{nums.get(times)} "
                                 f"{nums.get('+100')} d "
-                                f"{nums.get(typed_nums[0])}"
+                                f"{nums.get(typed_nums[0])} "
                             )
                     else:
                         times = typed_nums[2] // 100
@@ -422,104 +422,207 @@ def translate():
                     if ten_times == 0:
                         pass
                     else:
-                        print(f"{nums.get(ten_times)} n {nums.get('+1000')}", end=" ")
+                        result = (
+                            f"{nums.get(ten_times)} n " 
+                            f"{nums.get('+1000')} "
+                        )
                 elif ten_times == 0:
                     if unit_times == 1:
-                        print(f"{nums.get(1000)}", end=" ")
+                        result = {nums.get(1000)}
                     else:
-                        print(f"{nums.get(unit_times)} n {nums.get('+1000')}", end=" ")
+                        result = (
+                            f"{nums.get(unit_times)} n " 
+                            f"{nums.get('+1000')}"
+                        )
                 else:
-                    print(f"{nums.get(ten_times)} d {nums.get(unit_times)} n {nums.get('+1000')}", end=" ")
+                    result = (
+                        f"{nums.get(ten_times)} d " 
+                        f"{nums.get(unit_times)} n " 
+                        f"{nums.get('+1000')} "
+                    )
             elif unit_times == 0 and ten_times == 0:
                 if times == 1:
-                    print(f"{nums.get(100)} n {nums.get('+1000')}", end=" ")
+                    result = (
+                        f"{nums.get(100)} n "
+                        f"{nums.get('+1000')} "
+                    )
                 else:
-                    print(f"{nums.get(times)} {nums.get('+100')} n {nums.get('+1000')}", end=" ")
+                    result = (
+                        f"{nums.get(times)} " 
+                        f"{nums.get('+100')} n " 
+                        f"{nums.get('+1000')} "
+                    )
             elif unit_times == 0 and ten_times != 0:
                 if times == 1:
-                    print(f"{nums.get(100)} d {nums.get(ten_times)} n {nums.get('+1000')}", end=" ")
+                    result = (
+                        f"{nums.get(100)} d "
+                        f"{nums.get(ten_times)} n "
+                        f"{nums.get('+1000')} "
+                    )
                 else:
-                    print(f"{nums.get(times)} {nums.get('+100')} d {nums.get(ten_times)} n {nums.get('+1000')}", end=" ")
+                    result = (
+                        f"{nums.get(times)} "
+                        f"{nums.get('+100')} d "
+                        f"{nums.get(ten_times)} n "
+                        f"{nums.get('+1000')} "
+                    )
             elif unit_times != 0 and ten_times == 0:
                 if times == 1:
-                    print(f"{nums.get(100)} d {nums.get(unit_times)} n {nums.get('+1000')}", end=" ")
+                    result = (
+                        f"{nums.get(100)} d "
+                        f"{nums.get(unit_times)} n "
+                        f"{nums.get('+1000')} "
+                    )
                 else:
-                    print(f"{nums.get(times)} {nums.get('+100')} d {nums.get(unit_times)} n {nums.get('+1000')}", end=" ")
+                    result = (
+                        f"{nums.get(times)} "
+                        f"{nums.get('+100')} d "
+                        f"{nums.get(unit_times)} n " 
+                        f"{nums.get('+1000')} "
+                    )
             else:
                 if times == 1:
-                    print(f"{nums.get(100)} d {nums.get(ten_times)} d {nums.get(unit_times)} n {nums.get('+1000')}", end=" ")
+                    result = (
+                        f"{nums.get(100)} d " 
+                        f"{nums.get(ten_times)} d "
+                        f"{nums.get(unit_times)} n "
+                        f"{nums.get('+1000')} "
+                    )
                 else:
-                    print(f"{nums.get(times)} {nums.get('+100')} d {nums.get(ten_times)} d {nums.get(unit_times)} n {nums.get('+1000')}", end=" ")
+                    result = (
+                        f"{nums.get(times)} "
+                        f"{nums.get('+100')} d "
+                        f"{nums.get(ten_times)} d "
+                        f"{nums.get(unit_times)} n "
+                        f"{nums.get('+1000')} "
+                    )
             if times != 0 or ten_times !=0 or unit_times != 0:
                 if typed_nums[2] != 0:
                     if typed_nums[0] == 0 and typed_nums[1] == 0:
                         times = typed_nums[2] // 100
                         if times == 1:
-                            print(f"d {nums.get(100)}")
+                            result += f"d {nums.get(100)}"
                         else:
-                            print(f"d {nums.get(times)} {nums.get('+100')}")
+                            result += (
+                                f"d {nums.get(times)} "
+                                f"{nums.get('+100')}"
+                            )
                     elif typed_nums[0] == 0 and typed_nums[1] != 0:
                         times = typed_nums[2] // 100
                         if times == 1:
-                            print(f"d {nums.get(100)} d {nums.get(typed_nums[1])}")
+                            result += (
+                                f"d {nums.get(100)} d "
+                                f"{nums.get(typed_nums[1])} "
+                            )
                         else:
-                            print(f"d {nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[1])}")
+                            result += (
+                                f"d {nums.get(times)} "
+                                f"{nums.get('+100')} d "
+                                f"{nums.get(typed_nums[1])} "
+                            )
                     elif typed_nums[0] != 0 and typed_nums[1] == 0:
                         times = typed_nums[2] // 100
                         if times == 1:
-                            print(f"d {nums.get(100)} d {nums.get(typed_nums[0])}")
+                            result += (
+                                f"d {nums.get(100)} d "
+                                f"{nums.get(typed_nums[0])}"
+                            )
                         else:
-                            print(f"d {nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[0])}")
+                            result += (
+                                f"d {nums.get(times)} "
+                                f"{nums.get('+100')} d "
+                                f"{nums.get(typed_nums[0])} "
+                            )
                     else:
                         times = typed_nums[2] // 100
                         if times == 1:
-                            print(f"d {nums.get(100)} d {nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
+                            result += (
+                                f"d {nums.get(100)} d "
+                                f"{nums.get(typed_nums[1])} d "
+                                f"{nums.get(typed_nums[0])} "
+                            )
                         else:
-                            print(f"d {nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
+                            result += (
+                                f"d {nums.get(times)} "
+                                f"{nums.get('+100')} d "
+                                f"{nums.get(typed_nums[1])} d "
+                                f"{nums.get(typed_nums[0])} ")
                 else:
                         if typed_nums[0] == 0 and typed_nums[1] == 0:
                             print()
                         elif typed_nums[0] == 0 and typed_nums[1] != 0:
-                            print(f"d {nums.get(typed_nums[1])}")
+                            result += f"d {nums.get(typed_nums[1])}"
                         elif typed_nums[0] != 0 and typed_nums[1] == 0:
-                            print(f"d {nums.get(typed_nums[0])}")
+                            result += f"d {nums.get(typed_nums[0])}"
                         elif typed_nums[0] != 0 and typed_nums[1] != 0:
-                            print(f"d {nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
+                            result += (
+                                f"d {nums.get(typed_nums[1])} d "
+                                f"{nums.get(typed_nums[0])}"
+                            )
             else:
                 if typed_nums[2] != 0:
                     if typed_nums[0] == 0 and typed_nums[1] == 0:
                         times = typed_nums[2] // 100
                         if times == 1:
-                            print(f"{nums.get(100)}")
+                            result = {nums.get(100)}
                         else:
-                            print(f"{nums.get(times)} {nums.get('+100')}")
+                            result = (
+                                f"{nums.get(times)}" 
+                                f"{nums.get('+100')}"
+                            )
                     elif typed_nums[0] == 0 and typed_nums[1] != 0:
                         times = typed_nums[2] // 100
                         if times == 1:
-                            print(f"{nums.get(100)} d {nums.get(typed_nums[1])}")
+                            result = (
+                                f"{nums.get(100)} d "
+                                f"{nums.get(typed_nums[1])} "
+                            )
                         else:
-                            print(f"{nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[1])}")
+                            result = (
+                                f"{nums.get(times)} "
+                                f"{nums.get('+100')} d "
+                                f"{nums.get(typed_nums[1])} "
+                            )
                     elif typed_nums[0] != 0 and typed_nums[1] == 0:
                         times = typed_nums[2] // 100
                         if times == 1:
-                            print(f"{nums.get(100)} d {nums.get(typed_nums[0])}")
+                            result = (
+                                f"{nums.get(100)} d "
+                                f"{nums.get(typed_nums[0])}"
+                            )
                         else:
-                            print(f"{nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[0])}")
+                            result = (
+                                f"{nums.get(times)} "
+                                f"{nums.get('+100')} d "
+                                f"{nums.get(typed_nums[0])} "
+                            )
                     else:
                         times = typed_nums[2] // 100
                         if times == 1:
-                            print(f"{nums.get(100)} d {nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
+                            result = (
+                                f"{nums.get(100)} d "
+                                f"{nums.get(typed_nums[1])} d "
+                                f"{nums.get(typed_nums[0])} "
+                            )
                         else:
-                            print(f"{nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
+                            result = (
+                                f"{nums.get(times)} "
+                                f"{nums.get('+100')} d "
+                                f"{nums.get(typed_nums[1])} d "
+                                f"{nums.get(typed_nums[0])} "
+                            )
                 else:
                         if typed_nums[0] == 0 and typed_nums[1] == 0:
-                            print(f"{nums.get(0)}")
+                            result = {nums.get(0)}
                         elif typed_nums[0] == 0 and typed_nums[1] != 0:
-                            print(f"{nums.get(typed_nums[1])}")
+                            result = {nums.get(typed_nums[1])}
                         elif typed_nums[0] != 0 and typed_nums[1] == 0:
-                            print(f"{nums.get(typed_nums[0])}")
+                            result = {nums.get(typed_nums[0])}
                         elif typed_nums[0] != 0 and typed_nums[1] != 0:
-                            print(f"{nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
+                            result = (
+                                f"{nums.get(typed_nums[1])} d "
+                                f"{nums.get(typed_nums[0])} "
+                            )
 
         elif len(typed_nums) == 7:
             if typed_nums[6] == 1000000:  # million
@@ -533,111 +636,207 @@ def translate():
                         if ten_times == 0:
                             pass
                         else:
-                            print(f"{nums.get(ten_times)} n {nums.get('+1000')}", end=" ")
+                            result = (
+                                f"{nums.get(ten_times)} n "
+                                f"{nums.get('+1000')} "
+                            )
                     elif ten_times == 0:
                         if unit_times == 1:
-                            print(f"{nums.get(1000)}", end=" ")
+                            result = f"{nums.get(1000)}"
                         else:
-                            print(f"{nums.get(unit_times)} n {nums.get('+1000')}", end=" ")
+                            result = (
+                                f"{nums.get(unit_times)} n "
+                                f"{nums.get('+1000')}"
+                            )
                     else:
-                        print(f"{nums.get(ten_times)} d {nums.get(unit_times)} n {nums.get('+1000')}", end=" ")
+                        result = (
+                            f"{nums.get(ten_times)} d "
+                            f"{nums.get(unit_times)} n "
+                            f"{nums.get('+1000')} "
+                        )
                 elif unit_times == 0 and ten_times == 0:
                     if times == 1:
-                        print(f"{nums.get(100)} n {nums.get('+1000')}", end=" ")
+                        result = (
+                            f"{nums.get(100)} n "
+                            f"{nums.get('+1000')} "
+                        )
                     else:
-                        print(f"{nums.get(times)} {nums.get('+100')} n {nums.get('+1000')}", end=" ")
+                        result = (
+                            f"{nums.get(times)} "
+                            f"{nums.get('+100')} n "
+                            f"{nums.get('+1000')} "
+                        )
                 elif unit_times == 0 and ten_times != 0:
                     if times == 1:
-                        print(f"{nums.get(100)} d {nums.get(ten_times)} n {nums.get('+1000')}", end=" ")
+                        result = (
+                            f"{nums.get(100)} d "
+                            f"{nums.get(ten_times)} n "
+                            f"{nums.get('+1000')} "
+                        )
                     else:
-                        print(f"{nums.get(times)} {nums.get('+100')} d {nums.get(ten_times)} n {nums.get('+1000')}",
-                                end=" ")
+                        result = (
+                            f"{nums.get(times)} "
+                            f"{nums.get('+100')} d "
+                            f"{nums.get(ten_times)} n "
+                            f"{nums.get('+1000')} "
+                        )
                 elif unit_times != 0 and ten_times == 0:
                     if times == 1:
-                        print(f"{nums.get(100)} d {nums.get(unit_times)} n {nums.get('+1000')}", end=" ")
+                        result = (
+                            f"{nums.get(100)} d "
+                            f"{nums.get(unit_times)} n "
+                            f"{nums.get('+1000')} "
+                        )
                     else:
-                        print(f"{nums.get(times)} {nums.get('+100')} d {nums.get(unit_times)} n {nums.get('+1000')}",
-                                end=" ")
+                        result = (
+                            f"{nums.get(times)} "
+                            f"{nums.get('+100')} d "
+                            f"{nums.get(unit_times)} n "
+                            f"{nums.get('+1000')} "
+                        )
                 else:
                     if times == 1:
-                        print(f"{nums.get(100)} d {nums.get(ten_times)} d {nums.get(unit_times)} n {nums.get('+1000')}",
-                                end=" ")
+                        result = (
+                            f"{nums.get(100)} d "
+                            f"{nums.get(ten_times)} d "
+                            f"{nums.get(unit_times)} n "
+                            f"{nums.get('+1000')} "
+                        )
                     else:
-                        print(
-                            f"{nums.get(times)} {nums.get('+100')} d {nums.get(ten_times)} d {nums.get(unit_times)} n {nums.get('+1000')}",
-                            end=" ")
+                        result = (
+                            f"{nums.get(times)} "
+                            f"{nums.get('+100')} d "
+                            f"{nums.get(ten_times)} d "
+                            f"{nums.get(unit_times)} n "
+                            f"{nums.get('+1000')} "
+                        )
                 if times != 0 or ten_times != 0 or unit_times != 0:
                     if typed_nums[2] != 0:
                         if typed_nums[0] == 0 and typed_nums[1] == 0:
                             times = typed_nums[2] // 100
                             if times == 1:
-                                print(f"d {nums.get(100)}")
+                                result += f"d {nums.get(100)}"
                             else:
-                                print(f"d {nums.get(times)} {nums.get('+100')}")
+                                result += (
+                                    f"d {nums.get(times)} "
+                                    f"{nums.get('+100')} "
+                                )
                         elif typed_nums[0] == 0 and typed_nums[1] != 0:
                             times = typed_nums[2] // 100
                             if times == 1:
-                                print(f"d {nums.get(100)} d {nums.get(typed_nums[1])}")
+                                result += (
+                                    f"d {nums.get(100)} d "
+                                    f"{nums.get(typed_nums[1])} "
+                                )
                             else:
-                                print(f"d {nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[1])}")
+                                result += (
+                                    f"d {nums.get(times)} "
+                                    f"{nums.get('+100')} d "
+                                    f"{nums.get(typed_nums[1])} "
+                                )
                         elif typed_nums[0] != 0 and typed_nums[1] == 0:
                             times = typed_nums[2] // 100
                             if times == 1:
-                                print(f"d {nums.get(100)} d {nums.get(typed_nums[0])}")
+                                result += (
+                                    f"d {nums.get(100)} d "
+                                    f"{nums.get(typed_nums[0])}"
+                                )
                             else:
-                                print(f"d {nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[0])}")
+                                result += (
+                                    f"d {nums.get(times)} "
+                                    f"{nums.get('+100')} d "
+                                    f"{nums.get(typed_nums[0])} "
+                                )
                         else:
                             times = typed_nums[2] // 100
                             if times == 1:
-                                print(f"d {nums.get(100)} d {nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
+                                result += (
+                                    f"d {nums.get(100)} d "
+                                    f"{nums.get(typed_nums[1])} d "
+                                    f"{nums.get(typed_nums[0])} "
+                                )
                             else:
-                                print(
-                                    f"d {nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
+                                result += (
+                                    f"d {nums.get(times)} "
+                                    f"{nums.get('+100')} d "
+                                    f"{nums.get(typed_nums[1])} d "
+                                    f"{nums.get(typed_nums[0])} "
+                                )
                     else:
                         if typed_nums[0] == 0 and typed_nums[1] == 0:
-                            print()
+                            return
                         elif typed_nums[0] == 0 and typed_nums[1] != 0:
-                            print(f"d {nums.get(typed_nums[1])}")
+                            result += f"d {nums.get(typed_nums[1])}"
                         elif typed_nums[0] != 0 and typed_nums[1] == 0:
-                            print(f"d {nums.get(typed_nums[0])}")
+                            result += f"d {nums.get(typed_nums[0])}"
                         elif typed_nums[0] != 0 and typed_nums[1] != 0:
-                            print(f"d {nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
+                            result += (
+                                f"d {nums.get(typed_nums[1])} d " 
+                                f"{nums.get(typed_nums[0])} "
+                            )
                 else:
                     if typed_nums[2] != 0:
                         if typed_nums[0] == 0 and typed_nums[1] == 0:
                             times = typed_nums[2] // 100
                             if times == 1:
-                                print(f"{nums.get(100)}")
+                                result = f"{nums.get(100)}"
                             else:
-                                print(f"{nums.get(times)} {nums.get('+100')}")
+                                result = (
+                                    f"{nums.get(times)} "
+                                    f"{nums.get('+100')} "
+                                )
                         elif typed_nums[0] == 0 and typed_nums[1] != 0:
                             times = typed_nums[2] // 100
                             if times == 1:
-                                print(f"{nums.get(100)} d {nums.get(typed_nums[1])}")
+                                result = (
+                                    f"{nums.get(100)} d " 
+                                    f"{nums.get(typed_nums[1])} "
+                                )
                             else:
-                                print(f"{nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[1])}")
+                                result = (
+                                    f"{nums.get(times)} "
+                                    f"{nums.get('+100')} d "
+                                    f"{nums.get(typed_nums[1])} "
+                                )
                         elif typed_nums[0] != 0 and typed_nums[1] == 0:
                             times = typed_nums[2] // 100
                             if times == 1:
-                                print(f"{nums.get(100)} d {nums.get(typed_nums[0])}")
+                                result = (
+                                    f"{nums.get(100)} d"
+                                    f"{nums.get(typed_nums[0])} "
+                                )
                             else:
-                                print(f"{nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[0])}")
+                                result = (
+                                    f"{nums.get(times)} "
+                                    f"{nums.get('+100')} d "
+                                    f"{nums.get(typed_nums[0])} "
+                                )
                         else:
                             times = typed_nums[2] // 100
                             if times == 1:
-                                print(f"{nums.get(100)} d {nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
+                                result = (
+                                    f"{nums.get(100)} d "
+                                    f"{nums.get(typed_nums[1])} d "
+                                    f"{nums.get(typed_nums[0])} "
+                                )
                             else:
-                                print(
-                                    f"{nums.get(times)} {nums.get('+100')} d {nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
+                                result = (
+                                    f"{nums.get(times)} "
+                                    f"{nums.get('+100')} d "
+                                    f"{nums.get(typed_nums[1])} d "
+                                    f"{nums.get(typed_nums[0])} ")
                     else:
                         if typed_nums[0] == 0 and typed_nums[1] == 0:
-                            print(f"{nums.get(0)}")
+                            result = f"{nums.get(0)}"
                         elif typed_nums[0] == 0 and typed_nums[1] != 0:
-                            print(f"{nums.get(typed_nums[1])}")
+                            result = f"{nums.get(typed_nums[1])}"
                         elif typed_nums[0] != 0 and typed_nums[1] == 0:
-                            print(f"{nums.get(typed_nums[0])}")
+                            result = f"{nums.get(typed_nums[0])}"
                         elif typed_nums[0] != 0 and typed_nums[1] != 0:
-                            print(f"{nums.get(typed_nums[1])} d {nums.get(typed_nums[0])}")
+                            result = (
+                                f"{nums.get(typed_nums[1])} d "
+                                f"{nums.get(typed_nums[0])} "
+                            )
 
     document.getElementId(result).innerText = result
 
