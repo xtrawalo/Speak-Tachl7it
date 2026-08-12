@@ -85,6 +85,9 @@ If the input is invalid, an error message is displayed instead of attempting to 
 - HTML & CSS
 - Python & Flask
 
+## Tech Stack
+No AI used to make this project. It just guided me to link between Python and Html
+
 ## Author
 
 Me: [xtrawalo](https://github.com/xtrawalo)
