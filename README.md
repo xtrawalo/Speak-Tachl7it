@@ -8,13 +8,15 @@ A website that translate numbers for a 4,000-year-old language.</p>
 - [Demo](#demo)
 - [About The Project](#about-the-project)
   - [Home Page](#home-page)
-  - [Pricing](#pricing)
+  - [Number Dictionary](#number-dictionary)
+  - [Translation](#translation)
+  - [Input Validation](#input-validation)
 - [Tech Stack](#tech-stack)
 - [Author](#author)
 
 ## Demo
 
-Link --> [Clicke_me](https://speak-tachl7it.up.railway.app/)
+Link --> [https://speak-tachl7it.up.railway.app/](https://speak-tachl7it.up.railway.app/)
 
 ## About The Project
 
@@ -22,49 +24,66 @@ Link --> [Clicke_me](https://speak-tachl7it.up.railway.app/)
 
 It displays an old Amazigh village in the background, with the title **“Speak Tamazight Numbers”** and a place to input numbers from **0 to 1,000,000**.
 
-<img src="Assets/Screenshots/Home.png">
+### Number Dictionary
 
-### Product Overview
+The program stores the Tamazight words for numbers and number units in a dictionary called ``nums``.
 
-A simple description of the product.
+For example:
 
-<img src="Assets/Screenshots/Overview.png">
+0 → amya
+1 → yan
+2 → sin
+3 → krad
+10 → mraw
+20 → si mraw
+100 → timidi
+1000 → ifd
+1,000,000 → akndid
 
-### Features
+It also uses special values such as +100 and +1000 to construct larger numbers.
 
-The product's features :
-- Pressure sensor
-- 48-Hour Battery Life
-- Piezo Sensors
-- Linked-App
+### Translation
 
-<img src="Assets/Screenshots/Features1.png">
+The translate() function receives the number entered by the user and breaks it down into its different parts.
 
-<img src="Assets/Screenshots/Features.png">
+It determines whether the number is:
 
-### Mobile App
+A unit
+A number between 10 and 99
+A number between 100 and 999
+A number in the thousands
+A number in the ten-thousands
+A number in the hundred-thousands
+One million
 
-A button to download the app connected to Dropfix.
+Different functions are used to handle these cases:
 
-<img src="Assets/Screenshots/App.png">
+``first_digit()``       :handles single-digit numbers.
+``teen()``              :handles numbers from 10 to 99.
+``hundred()``           :handles hundreds.
+``thounsand()``         :handles the thousands section.
+``hundred_thousands()`` :handles hundred-thousand numbers.
+``translate()``         :combines everything together.
 
-**Note :** There is no Mobile App.
-### FAQ
+The program separates the digits mathematically using powers of 10 before constructing the final Tachl7it translation.
 
-Answers to the most frequently asked questions about DropFix.
+### Input Validation
 
-<img src="Assets/Screenshots/FAQ.png">
+The website accepts a number through an HTML form.
 
-### Pricing
+The program checks that:
 
-The price of Dropfix and a button to purchase it.
+The input isn't empty.
+The input is a whole number.
+The number isn't negative.
+The number doesn't exceed 1,000,000.
 
-<img src="Assets/Screenshots/Pricing.png">
+If the input is invalid, an error message is displayed instead of attempting to translate it.
 
 ## Tech Stack
 
 - HTML & CSS
-- Minimal JavaScript
+- Python & Flask
 
 ## Author
 
