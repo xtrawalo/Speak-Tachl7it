@@ -1,18 +1,20 @@
 <html>
     <head>
-        <title>Speak Tachl7it</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Inder&family=MedievalSharp&display=swap" rel="stylesheet">
+        <title>Speak Tamazight</title>
     </head>
     <body>
-        <h1>Speak Tachl7it</h1>
+        <h1>Speak Tamazight</h1>
         <h2>Numbers</h2>
-        <p> Enter A number between one and one million,
-            and it will be translated to Tamazight. </p>
         <form method="POST" action="/">
-            <input type="number" name="number" min="0" max="1000000">
+            <input type="number" name="number" min="0" max="1000000" placeholder="Enter A number between one and one million.">
             <button type="submit">Translate</button>
         </form>
         {% if result %}
-        <p>Your number in Tamazight is pronounced as :</p>
+        <p>This number in Tamazight is pronounced as :</p>
         <h3>{{result}}</h3>
         {% endif %}
     </body>
