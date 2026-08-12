@@ -1,6 +1,6 @@
 <h1 align="center">Speak Tamazight : Website in HTML & CSS & Python</h1>
 <p align="center">
-<img src="Assets/Screenshots/Home.png">
+<img src="Screenshot.png">
 A website that translate numbers for a 4,000-year-old language.</p>
 
 ## Table of content
