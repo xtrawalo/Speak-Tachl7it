@@ -257,10 +257,9 @@ def hundred_thousands():
                 f"{nums.get(unit_times)} n "
                 f"{nums.get('+1000')} "
             )
-    if times != 0 or ten_times !=0 or unit_times != 0:
-        result = hundred()
-    else:
-        result = _hundred()
+    
+    if typed_nums[0] != 0 or typed_nums[1] !=0 or typed_nums[2] != 0:
+        result += f"d {hundred()}"
 
     return result
 
