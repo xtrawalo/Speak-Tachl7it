@@ -55,3 +55,14 @@ button {
 button :hover {
     background-color: #7D5433;
 }
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.6;
+}
