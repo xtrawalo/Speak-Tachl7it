@@ -35,7 +35,7 @@ result = ""
 times = ""
 typed_nums=[]
 
-def unit():
+def first_digit():
     result = nums.get(typed_nums[0])
     return result
 
@@ -46,7 +46,7 @@ def teen():
         result = nums.get(typed_nums[0])
     else:
         result = (
-            f"{nums.get(typed_nums[1])} d"
+            f"{nums.get(typed_nums[1])} d "
             f"{nums.get(typed_nums[0])} "
         )
     return result
@@ -109,11 +109,11 @@ def hundred():
 
 def _hundred():
     if typed_nums[2] == 0:
-        result = teen()
+        result = f" d {teen()}"
     elif typed_nums[0] == 0 and typed_nums[1] == 0:
         times = typed_nums[2] // 100
         if times == 1:
-            result = nums.get(100)
+            result = f"d {nums.get(100)}"
         else:
             result = (
                 f"d {nums.get(times)} " 
@@ -165,9 +165,15 @@ def _hundred():
 
 def thounsand():
     if times != 0:
-        _hundred()
+        if typed_nums[0] == 0 and typed_nums[1] == 0 and typed_nums[2] == 0:
+            result = ""
+        else:
+            result = _hundred()
     else:
-        hundred()
+        if typed_nums[0] == 0 and typed_nums[1] == 0 and typed_nums[2] == 0:
+            result = ""
+        else:
+            result = hundred()
     return result
 
 def hundred_thousands():
@@ -252,14 +258,15 @@ def hundred_thousands():
                 f"{nums.get('+1000')} "
             )
     if times != 0 or ten_times !=0 or unit_times != 0:
-        result = hundred
+        result = hundred()
     else:
-        result = _hundred
+        result = _hundred()
 
     return result
 
-
 def translate(word):
+    global typed_nums
+    typed_nums = []
     length = len(str(word))
     num = 0
 
@@ -271,22 +278,29 @@ def translate(word):
         typed_nums.append(final_num)
 
     if len(typed_nums) == 1: #unit
-        unit()
+        result = first_digit()
     elif len(typed_nums) == 2: #ten
-        teen()
+        result = teen()
     elif len(typed_nums) == 3: #hundred
-        hundred()
+        result = hundred()
+
+
     elif len(typed_nums) == 4: #thousand
         times = typed_nums[3] // 1000
-        if times != 0 :
+        if times != 0:
             if times == 1:
-                result = nums.get(1000)
+                result = f"{nums.get(1000)} "
             else:
                 result = (
                     f"{nums.get(times)} n " 
                     f"{nums.get('+1000')} "
-                )
-        result = thounsand
+            )
+        else:
+            result = ""
+        
+        result += thounsand()
+
+
     elif len(typed_nums) == 5: #ten thousands
         times = typed_nums[4] // 1000
         unit_times = typed_nums[3] // 1000
@@ -306,14 +320,18 @@ def translate(word):
                 f"{nums.get(unit_times)} n "
                 f"{nums.get('+1000')} "
             )
-        result = thounsand
+        else:
+            result = ""
+        
+        result += thounsand()
+
     elif len(typed_nums) == 6: #hundred thousands
-        result = hundred_thousands
+        result = hundred_thousands()
     elif len(typed_nums) == 7:
         if typed_nums[6] == 1000000:  # million
             result = nums.get(typed_nums[6])
         elif typed_nums[6] == 0:
-            result = hundred_thousands
+            result = hundred_thousands()
 
     return result.strip()
 
@@ -338,3 +356,6 @@ def home():
                 result = "Invalid input. Please enter a whole number."
 
     return render_template("index.html", result=result)
+
+if __name__ == "__main__":
+    app.run(debug=True)
