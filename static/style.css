@@ -1,0 +1,57 @@
+body{
+    background-image: url(Assets/Background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    padding: 10vh 0;
+}
+
+h1 {
+    color: #E3C7A1;
+    font-size: 100px;
+    font-family: 'Almendra', serif;
+}
+
+h2{
+    color:#C9A77D;
+    font-size: 60px;
+    font-family: 'MedievalSharp', sans-serif;
+}
+
+p{
+    color: #F0DFC8;
+    font-size: 20px;
+    font-family: 'Inder', sans-serif;
+
+}
+
+h3{
+    color: #D8B58A;
+    font-size: 20px;
+    font-family: 'Inder', sans-serif;
+}
+
+input{
+    background-color: #C9A77D;
+    color: #3B2718;
+    border: 2px solid #8f6F4D;
+    width: 400px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #6B4528;
+    color: #C9A77D;
+    border: 2px solid #8f6F4D;
+    padding: 10px 24px;
+    font-family: 'MedievalSharp', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button :hover {
+    background-color: #7D5433;
+}
