@@ -30,15 +30,15 @@ The program stores the Tamazight words for numbers and number units in a diction
 
 For example:
 
-0 → amya
-1 → yan
-2 → sin
-3 → krad
-10 → mraw
-20 → si mraw
-100 → timidi
-1000 → ifd
-1,000,000 → akndid
+- 0 → amya
+- 1 → yan
+- 2 → sin
+- 3 → krad
+- 10 → mraw
+- 20 → si mraw
+- 100 → timidi
+- 1000 → ifd
+- 1,000,000 → akndid
 
 It also uses special values such as +100 and +1000 to construct larger numbers.
 
