@@ -1,18 +1,19 @@
 <html>
     <head>
         <title>Speak Tachl7it</title>
-        <link rel="stylesheet" href="https://pyscript.net/releases/2024.10.1/core.css">
-        <script type="module" src="https://pyscript.net/releases/2024.10.1/core.js"></script>
     </head>
     <body>
         <h1>Speak Tachl7it</h1>
         <h2>Numbers</h2>
         <p> Enter A number between one and one million,
             and it will be translated to Tamazight. </p>
-        <input type="number" id="number" min="1" max="1000000">
-        <button id="translate">Translate</button>
+        <form method="POST" action="/">
+            <input type="number" name="number" min="0" max="1000000">
+            <button type="submit">Translate</button>
+        </form>
+        {% if result %}
         <p>Your number in Tamazight is pronounced as :</p>
-        <h3 id="result"></h3>
-        <py-script src="main.py">   </py-script>
+        <h3>{{result}}</h3>
+        {% endif %}
     </body>
 </html> 
